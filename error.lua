@@ -7,22 +7,22 @@ Thank you for not stealing this code.
 
 local module = {}
 
-local error;
+local erro;
 
 
 --[[
 module.throw(string error, boolean kick)
   Kicks a player.
 ]]
-module.throw = function(error,kick)
-  error = error
-  print("[MC32_ERROR]" .. error)
+module.throw = function(err,kick)
+  erro = err
+  print("[MC32_ERROR]" .. err .."")
   if kick == true then
     for i,v in pairs(game.Players:GetChildren()) do
-      v:Kick("[MC32_ERROR]" .. error)
+      v:Kick("[MC32_ERROR]" .. err)
     end
   end
-  error = nil -- Reset the error.
+  erro = nil -- Reset the error.
 end
 
 return module
