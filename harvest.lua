@@ -7,14 +7,11 @@ Thank you for not stealing this code.
 
 -- Click on a fruit to collect it.
 local clickDetector;
-local error;
+local err = require(script.Parent.error)
 
 if script.Parent:IsA "ClickDetector" then
   clickDetector = script.Parent
 else
-  error = "Script parent is not of Class 'ClickDetector'."
-  for i,v in pairs(game.Players:GetChildren()) do
-    v:Kick(error)
-  end
-  error = nil  -- Reset the error.
+  err.throw("Parent is not of class 'ClickDetector'",true) -- Kick all players due to error.
 end
+
