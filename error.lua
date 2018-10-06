@@ -16,7 +16,7 @@ module.throw(string error, boolean kick)
 ]]
 module.throw = function(err,kick)
   erro = err
-  print("[MC32_ERROR]" .. err .."")
+  print("[MC32_ERROR]" .. err .. "If error persists, contact an admin.")
   if kick == true then
     for i,v in pairs(game.Players:GetChildren()) do
       v:Kick("[MC32_ERROR]" .. err)
